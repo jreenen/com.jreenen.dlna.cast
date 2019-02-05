@@ -1,0 +1,112 @@
+{
+  "id": "com.jreenen.dlna.cast",
+  "version": "0.0.1",
+  "compatibility": ">=1.5.0",
+  "sdk": 2,
+  "brandColor": "#45aa42",
+  "name": {
+    "en": "Homey DLNA",
+    "nl": "Homey DLNA"
+  },
+  "description": {
+    "en": "Adds support for DLNA certified devices."
+  },
+  "category": [
+    "video",
+    "music",
+    "tools"
+  ],
+  "tags": {
+    "en": [
+      "DLNA",
+      "UPnP",
+      "mp3",
+      "mp4",
+      "picture",
+      "photo"
+    ],
+    "nl": [
+      "DLNA",
+      "UPnP",
+      "mp3",
+      "mp4",
+      "picture",
+      "foto",
+      "afbeelding"
+    ]
+  },
+  "permissions": [],
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "author": {
+    "name": "Jeroen van Reenen",
+    "email": "jreenen@hotmail.com"
+  },
+  "drivers": [
+    {
+      "id": "dlna-cast-driver",
+      "name": {
+        "en": "DLNA cast driver"
+      },
+      "class": "speaker",
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "capabilities": [
+        "speaker_album",
+        "speaker_artist",
+        "speaker_playing",
+        "volume_set"
+      ],
+      "images": {
+        "large": "/drivers/dlna-cast-driver/assets/images/large.png",
+        "small": "/drivers/dlna-cast-driver/assets/images/small.png"
+      }
+    }
+  ],
+  "flow": {
+    "actions": [
+      {
+        "id": "cast_media",
+        "title": {
+          "en": "Cast media",
+          "nl": "Cast media"
+        },
+        "args": [
+          {
+            "name": "cast_device",
+            "type": "device",
+            "filter": "driver_id=dlna-cast-driver"
+          },
+          {
+            "name": "media_url",
+            "type": "text",
+            "placeholder": {
+              "en": "Media url",
+              "nl": "Media url"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "jreenen"
+      }
+    }
+  }
+}
