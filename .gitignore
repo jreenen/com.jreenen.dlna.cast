@@ -1,0 +1,5 @@
+.vscode/
+env.json
+jsconfig.json
+examplejson/
+.DS_Store
